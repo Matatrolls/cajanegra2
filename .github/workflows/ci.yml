@@ -91,7 +91,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: test-results
-          path: target/test-results
+          path: target/karate-results
 
       - name: Determine test status
         if: always()
