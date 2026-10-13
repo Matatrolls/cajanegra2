@@ -1,0 +1,1836 @@
+{
+  "info": {
+    "name": "Ejercicios de Pruebas de Caja Negra",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Colección generada automáticamente a partir de /maquinas y /decisiones."
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://tu-app.onrender.com"
+    }
+  ],
+  "item": [
+    {
+      "name": "Transición de Estados",
+      "item": [
+        {
+          "name": "Listar ejercicios",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/ejercicios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "ejercicios"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Robot Cafetero Automatizado (Barista Bot)",
+          "item": [
+            {
+              "name": "Ver estado actual",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/barista-bot/estado",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "barista-bot",
+                    "estado"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Iniciar Pedido",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/barista-bot/evento",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "barista-bot",
+                    "evento"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evento\": \"Iniciar Pedido\"\n}"
+                }
+              }
+            },
+            {
+              "name": "Terminar Molienda",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/barista-bot/evento",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "barista-bot",
+                    "evento"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evento\": \"Terminar Molienda\"\n}"
+                }
+              }
+            },
+            {
+              "name": "Alcanzar Temperatura",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/barista-bot/evento",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "barista-bot",
+                    "evento"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evento\": \"Alcanzar Temperatura\"\n}"
+                }
+              }
+            },
+            {
+              "name": "Terminar Llenado",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/barista-bot/evento",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "barista-bot",
+                    "evento"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evento\": \"Terminar Llenado\"\n}"
+                }
+              }
+            },
+            {
+              "name": "Sin Ingredientes",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/barista-bot/evento",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "barista-bot",
+                    "evento"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evento\": \"Sin Ingredientes\"\n}"
+                }
+              }
+            },
+            {
+              "name": "Recargar y Reiniciar",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/barista-bot/evento",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "barista-bot",
+                    "evento"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evento\": \"Recargar y Reiniciar\"\n}"
+                }
+              }
+            },
+            {
+              "name": "Reiniciar",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/barista-bot/reiniciar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "barista-bot",
+                    "reiniciar"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Encendido / Apagado",
+          "item": [
+            {
+              "name": "Ver estado actual",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/encendido-apagado/estado",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "encendido-apagado",
+                    "estado"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "encender",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/encendido-apagado/evento",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "encendido-apagado",
+                    "evento"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evento\": \"encender\"\n}"
+                }
+              }
+            },
+            {
+              "name": "apagar (inválida)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/encendido-apagado/evento",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "encendido-apagado",
+                    "evento"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evento\": \"apagar\"\n}"
+                }
+              }
+            },
+            {
+              "name": "Reiniciar",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/encendido-apagado/reiniciar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "encendido-apagado",
+                    "reiniciar"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Sistema de Iluminación Inteligente en Auditorio Teatral",
+          "item": [
+            {
+              "name": "Ver estado actual",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/iluminacion-teatro/estado",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "iluminacion-teatro",
+                    "estado"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Encender",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/iluminacion-teatro/evento",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "iluminacion-teatro",
+                    "evento"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evento\": \"Encender\"\n}"
+                }
+              }
+            },
+            {
+              "name": "Iniciar Show",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/iluminacion-teatro/evento",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "iluminacion-teatro",
+                    "evento"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evento\": \"Iniciar Show\"\n}"
+                }
+              }
+            },
+            {
+              "name": "Alarma de Humo",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/iluminacion-teatro/evento",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "iluminacion-teatro",
+                    "evento"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evento\": \"Alarma de Humo\"\n}"
+                }
+              }
+            },
+            {
+              "name": "Fin Emergencia / Reset",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/iluminacion-teatro/evento",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "iluminacion-teatro",
+                    "evento"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evento\": \"Fin Emergencia / Reset\"\n}"
+                }
+              }
+            },
+            {
+              "name": "Reiniciar",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/iluminacion-teatro/reiniciar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "iluminacion-teatro",
+                    "reiniciar"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Sistema de Lavandería Industrial Automatizada",
+          "item": [
+            {
+              "name": "Ver estado actual",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/lavanderia/estado",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "lavanderia",
+                    "estado"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Cerrar Tapa",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/lavanderia/evento",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "lavanderia",
+                    "evento"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evento\": \"Cerrar Tapa\"\n}"
+                }
+              }
+            },
+            {
+              "name": "Nivel OK",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/lavanderia/evento",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "lavanderia",
+                    "evento"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evento\": \"Nivel OK\"\n}"
+                }
+              }
+            },
+            {
+              "name": "Fin Lavado",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/lavanderia/evento",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "lavanderia",
+                    "evento"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evento\": \"Fin Lavado\"\n}"
+                }
+              }
+            },
+            {
+              "name": "Apertura Forzosa",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/lavanderia/evento",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "lavanderia",
+                    "evento"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evento\": \"Apertura Forzosa\"\n}"
+                }
+              }
+            },
+            {
+              "name": "Reset Operador",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/lavanderia/evento",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "lavanderia",
+                    "evento"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evento\": \"Reset Operador\"\n}"
+                }
+              }
+            },
+            {
+              "name": "Reiniciar",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/lavanderia/reiniciar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "lavanderia",
+                    "reiniciar"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Proceso de Gestión de Reclamos por Garantía en Tienda",
+          "item": [
+            {
+              "name": "Ver estado actual",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/reclamos-garantia/estado",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "reclamos-garantia",
+                    "estado"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Asignar Técnico",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/reclamos-garantia/evento",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "reclamos-garantia",
+                    "evento"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evento\": \"Asignar Técnico\"\n}"
+                }
+              }
+            },
+            {
+              "name": "Diagnóstico Concluido [Defecto de Fábrica: sí]",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/reclamos-garantia/evento",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "reclamos-garantia",
+                    "evento"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evento\": \"Diagnóstico Concluido\",\n  \"guardia\": true\n}"
+                }
+              }
+            },
+            {
+              "name": "Diagnóstico Concluido [Defecto de Fábrica: no]",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/reclamos-garantia/evento",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "reclamos-garantia",
+                    "evento"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evento\": \"Diagnóstico Concluido\",\n  \"guardia\": false\n}"
+                }
+              }
+            },
+            {
+              "name": "Reparar",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/reclamos-garantia/evento",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "reclamos-garantia",
+                    "evento"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evento\": \"Reparar\"\n}"
+                }
+              }
+            },
+            {
+              "name": "Reiniciar",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/reclamos-garantia/reiniciar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "reclamos-garantia",
+                    "reiniciar"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Torniquete del Metro Inteligente",
+          "item": [
+            {
+              "name": "Ver estado actual",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/torniquete/estado",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "torniquete",
+                    "estado"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Validar Tarjeta [Saldo Positivo: sí]",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/torniquete/evento",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "torniquete",
+                    "evento"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evento\": \"Validar Tarjeta\",\n  \"guardia\": true\n}"
+                }
+              }
+            },
+            {
+              "name": "Validar Tarjeta [Saldo Positivo: no] (inválida)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/torniquete/evento",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "torniquete",
+                    "evento"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evento\": \"Validar Tarjeta\",\n  \"guardia\": false\n}"
+                }
+              }
+            },
+            {
+              "name": "Empujar (inválida)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/torniquete/evento",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "torniquete",
+                    "evento"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evento\": \"Empujar\"\n}"
+                }
+              }
+            },
+            {
+              "name": "Completar Giro",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/torniquete/evento",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "torniquete",
+                    "evento"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evento\": \"Completar Giro\"\n}"
+                }
+              }
+            },
+            {
+              "name": "Alarma [Falla de Energía: sí]",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/torniquete/evento",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "torniquete",
+                    "evento"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evento\": \"Alarma\",\n  \"guardia\": true\n}"
+                }
+              }
+            },
+            {
+              "name": "Alarma [Falla de Energía: no] (inválida)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/torniquete/evento",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "torniquete",
+                    "evento"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evento\": \"Alarma\",\n  \"guardia\": false\n}"
+                }
+              }
+            },
+            {
+              "name": "Reparar",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/torniquete/evento",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "torniquete",
+                    "evento"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evento\": \"Reparar\"\n}"
+                }
+              }
+            },
+            {
+              "name": "Reiniciar",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/torniquete/reiniciar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "torniquete",
+                    "reiniciar"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tablas de Decisión",
+      "item": [
+        {
+          "name": "Listar ejercicios",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/decisiones",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "decisiones"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Controlador de Climatización Inteligente en una Smart Home",
+          "item": [
+            {
+              "name": "Ver definición (condiciones + historial)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/climatizacion/definicion",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "climatizacion",
+                    "definicion"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Regla 1: Apagar sistema de climatización y emitir alerta sonora",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/climatizacion/evaluar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "climatizacion",
+                    "evaluar"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"valores\": [\n    false,\n    false,\n    true\n  ]\n}"
+                }
+              }
+            },
+            {
+              "name": "Regla 2: Encender aire acondicionado en modo refrigeración",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/climatizacion/evaluar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "climatizacion",
+                    "evaluar"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"valores\": [\n    true,\n    true,\n    false\n  ]\n}"
+                }
+              }
+            },
+            {
+              "name": "Regla 3: Mantener en modo de bajo consumo energético",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/climatizacion/evaluar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "climatizacion",
+                    "evaluar"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"valores\": [\n    true,\n    false,\n    false\n  ]\n}"
+                }
+              }
+            },
+            {
+              "name": "Regla 4: Mantener sistema apagado",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/climatizacion/evaluar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "climatizacion",
+                    "evaluar"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"valores\": [\n    false,\n    false,\n    false\n  ]\n}"
+                }
+              }
+            },
+            {
+              "name": "Reiniciar historial",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/climatizacion/reiniciar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "climatizacion",
+                    "reiniciar"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Sistema de Navegación de un Dron Agrícola Autónomo",
+          "item": [
+            {
+              "name": "Ver definición (condiciones + historial)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/dron-agricola/definicion",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "dron-agricola",
+                    "definicion"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Regla 1: Ejecutar maniobra de esquive de emergencia",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/dron-agricola/evaluar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "dron-agricola",
+                    "evaluar"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"valores\": [\n    false,\n    false,\n    true\n  ]\n}"
+                }
+              }
+            },
+            {
+              "name": "Regla 2: Abortar misión y activar retorno automático (RTL)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/dron-agricola/evaluar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "dron-agricola",
+                    "evaluar"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"valores\": [\n    true,\n    false,\n    false\n  ]\n}"
+                }
+              }
+            },
+            {
+              "name": "Regla 3: Abortar misión y activar retorno automático (RTL)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/dron-agricola/evaluar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "dron-agricola",
+                    "evaluar"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"valores\": [\n    false,\n    true,\n    false\n  ]\n}"
+                }
+              }
+            },
+            {
+              "name": "Regla 4: Continuar ruta de vuelo planificada",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/dron-agricola/evaluar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "dron-agricola",
+                    "evaluar"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"valores\": [\n    false,\n    false,\n    false\n  ]\n}"
+                }
+              }
+            },
+            {
+              "name": "Reiniciar historial",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/dron-agricola/reiniciar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "dron-agricola",
+                    "reiniciar"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Validación de Equipaje Automatizada (Tren de Alta Velocidad)",
+          "item": [
+            {
+              "name": "Ver definición (condiciones + historial)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/equipaje/definicion",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "equipaje",
+                    "definicion"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Regla 1: Bloquear compuerta e indicar derivación obligatoria a bodega de carga",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/equipaje/evaluar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "equipaje",
+                    "evaluar"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"valores\": [\n    false,\n    true,\n    false\n  ]\n}"
+                }
+              }
+            },
+            {
+              "name": "Regla 2: Aprobar embarque automático registrando sobrepeso autorizado",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/equipaje/evaluar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "equipaje",
+                    "evaluar"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"valores\": [\n    true,\n    false,\n    true\n  ]\n}"
+                }
+              }
+            },
+            {
+              "name": "Regla 3: Bloquear compuerta, emitir tique de cobro por exceso de equipaje y solicitar pago en el módulo de autoservicio",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/equipaje/evaluar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "equipaje",
+                    "evaluar"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"valores\": [\n    true,\n    false,\n    false\n  ]\n}"
+                }
+              }
+            },
+            {
+              "name": "Regla 4: Permitir el paso directo a la plataforma de abordaje",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/equipaje/evaluar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "equipaje",
+                    "evaluar"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"valores\": [\n    false,\n    false,\n    false\n  ]\n}"
+                }
+              }
+            },
+            {
+              "name": "Reiniciar historial",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/equipaje/reiniciar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "equipaje",
+                    "reiniciar"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Automatización de Riego y Nutrientes en Invernadero Hidropónico",
+          "item": [
+            {
+              "name": "Ver definición (condiciones + historial)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/invernadero/definicion",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "invernadero",
+                    "definicion"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Regla 1: Activar calefactores perimetrales y suspender riego por aspersión para evitar congelación",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/invernadero/evaluar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "invernadero",
+                    "evaluar"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"valores\": [\n    false,\n    false,\n    true\n  ]\n}"
+                }
+              }
+            },
+            {
+              "name": "Regla 2: Iniciar ciclo de riego automático con solución nutritiva estándar",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/invernadero/evaluar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "invernadero",
+                    "evaluar"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"valores\": [\n    true,\n    false,\n    false\n  ]\n}"
+                }
+              }
+            },
+            {
+              "name": "Regla 3: Bloquear riego y activar bomba de neutralización de pH antes de dispensar agua",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/invernadero/evaluar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "invernadero",
+                    "evaluar"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"valores\": [\n    true,\n    true,\n    false\n  ]\n}"
+                }
+              }
+            },
+            {
+              "name": "Regla 4: Mantener sistemas en espera",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/invernadero/evaluar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "invernadero",
+                    "evaluar"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"valores\": [\n    false,\n    false,\n    false\n  ]\n}"
+                }
+              }
+            },
+            {
+              "name": "Reiniciar historial",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/invernadero/reiniciar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "invernadero",
+                    "reiniciar"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Sistema de Moderación Automática en Foro de E-Sports",
+          "item": [
+            {
+              "name": "Ver definición (condiciones + historial)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/moderacion-foro/definicion",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "moderacion-foro",
+                    "definicion"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Regla 1: Escalar a baneo permanente de la cuenta de usuario",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/moderacion-foro/evaluar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "moderacion-foro",
+                    "evaluar"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"valores\": [\n    false,\n    true,\n    false\n  ]\n}"
+                }
+              }
+            },
+            {
+              "name": "Regla 2: Eliminar el mensaje instantáneamente y aplicar suspensión temporal de chat por 24 horas",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/moderacion-foro/evaluar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "moderacion-foro",
+                    "evaluar"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"valores\": [\n    true,\n    false,\n    false\n  ]\n}"
+                }
+              }
+            },
+            {
+              "name": "Regla 3: Ocultar mensaje automáticamente y mostrar advertencia de seguridad al chat",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/moderacion-foro/evaluar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "moderacion-foro",
+                    "evaluar"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"valores\": [\n    false,\n    false,\n    true\n  ]\n}"
+                }
+              }
+            },
+            {
+              "name": "Regla 4: Publicar mensaje con normalidad en el flujo de la conversación",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/moderacion-foro/evaluar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "moderacion-foro",
+                    "evaluar"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"valores\": [\n    false,\n    false,\n    false\n  ]\n}"
+                }
+              }
+            },
+            {
+              "name": "Reiniciar historial",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/decision/moderacion-foro/reiniciar",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "decision",
+                    "moderacion-foro",
+                    "reiniciar"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
