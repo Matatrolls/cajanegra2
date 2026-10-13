@@ -1,6 +1,6 @@
 Feature: Yo como tester quiero probar la funcionalidad de interruptor
 
-  @smoketest
+  @smoketest @Issue-1
   Scenario: Verificar el estado del interruptor en un momento dado
     Given url 'https://statemachine--maria7221.replit.app/api/'
     And path 'switch/state'
@@ -31,7 +31,7 @@ Feature: Yo como tester quiero probar la funcionalidad de interruptor
       * match responseStatus == 409
       * match response == { error: 'Invalid transition: the switch is already on' }
 
-      @startOn
+      @startOn @Issue-2
       Scenario: Verificar que el interruptor puede encenderse
         * def response =  call read('@smoketest')
         * eval if (response.state == 'off') karate.call(read('@doOn'))

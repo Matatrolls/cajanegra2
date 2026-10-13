@@ -4,7 +4,7 @@ Feature: Yo como tester quiero probar la lógica de navegación de un dron agrí
     * def baseUrl = 'https://taller-de-tecnicas-de-prueba-de-caja.onrender.com'
     * def droneBase = baseUrl + '/api/decision/dron-agricola'
 
-  @smoketest
+  @smoketest @Issue-3
   Scenario: Ver definición (condiciones + historial)
     Given url droneBase + '/definicion'
     When method get
@@ -12,7 +12,7 @@ Feature: Yo como tester quiero probar la lógica de navegación de un dron agrí
     * match responseStatus == 200
     * match response == '#object'
 
-  @regla1
+  @regla1 @Issue-4
   Scenario: Regla 1: Ejecutar maniobra de esquive de emergencia
     Given url droneBase + '/evaluar'
     And request { valores: [false, false, true] }
@@ -21,7 +21,7 @@ Feature: Yo como tester quiero probar la lógica de navegación de un dron agrí
     * match responseStatus == 200
     * match response == '#object'
 
-  @regla2
+  @regla2 @Issue-5
   Scenario: Regla 2: Abortar misión y activar retorno automático (RTL)
     Given url droneBase + '/evaluar'
     And request { valores: [true, false, false] }
@@ -30,7 +30,7 @@ Feature: Yo como tester quiero probar la lógica de navegación de un dron agrí
     * match responseStatus == 200
     * match response == '#object'
 
-  @regla3
+  @regla3 @Issue-6
   Scenario: Regla 3: Abortar misión y activar retorno automático (RTL)
     Given url droneBase + '/evaluar'
     And request { valores: [false, true, false] }
@@ -39,7 +39,7 @@ Feature: Yo como tester quiero probar la lógica de navegación de un dron agrí
     * match responseStatus == 200
     * match response == '#object'
 
-  @regla4
+  @regla4 @Issue-7
   Scenario: Regla 4: Continuar ruta de vuelo planificada
     Given url droneBase + '/evaluar'
     And request { valores: [false, false, false] }
@@ -48,7 +48,7 @@ Feature: Yo como tester quiero probar la lógica de navegación de un dron agrí
     * match responseStatus == 200
     * match response == '#object'
 
-  @reiniciar
+  @reiniciar @Issue-9
   Scenario: Reiniciar historial
     Given url droneBase + '/reiniciar'
     When method post
