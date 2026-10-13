@@ -51,6 +51,9 @@ jobs:
           # Determine tag: use workflow_dispatch input when present, otherwise default to @smoketest for CI events
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             tag='${{ github.event.inputs.testTag }}'
+            if [ -z "$tag" ]; then
+              tag='@smoketest'
+            fi
           else
             tag='@smoketest'
           fi
