@@ -3,7 +3,7 @@ Feature: Yo como tester quiero probar la lógica de estados del robot cafetero a
   Background:
     * def baristaBase = baristaBaseUrl
 
-  @smoketest
+  @smoketest @Issue-10
   Scenario: Verificar el estado actual del robot cafetero
     Given url baristaBase + '/estado'
     When method get
@@ -13,7 +13,7 @@ Feature: Yo como tester quiero probar la lógica de estados del robot cafetero a
     And match response.historial == '#array'
     And match response.maquina.estados == ['En Espera', 'Moliendo', 'Calentando Agua', 'Sirviendo', 'Error de Insumos']
 
-  @estado-valido @estado-valido-en-espera
+  @estado-valido @estado-valido-en-espera @Issue-11
   Scenario: Ejecutar evento válido cuando el robot está en espera
     Given url baristaBase + '/estado'
     When method get
@@ -32,7 +32,7 @@ Feature: Yo como tester quiero probar la lógica de estados del robot cafetero a
     And match response.estadoNuevo == '#string'
     And match response.guardia == null
 
-  @estado-valido @estado-valido-moliendo
+  @estado-valido @estado-valido-moliendo @Issue-12
   Scenario: Ejecutar evento válido cuando el robot está moliendo
     Given url baristaBase + '/estado'
     When method get
@@ -51,7 +51,7 @@ Feature: Yo como tester quiero probar la lógica de estados del robot cafetero a
     And match response.estadoNuevo == '#string'
     And match response.guardia == null
 
-  @estado-valido @estado-valido-calentando-agua
+  @estado-valido @estado-valido-calentando-agua @Issue-13
   Scenario: Ejecutar evento válido cuando el robot está calentando agua
     Given url baristaBase + '/estado'
     When method get
@@ -70,7 +70,7 @@ Feature: Yo como tester quiero probar la lógica de estados del robot cafetero a
     And match response.estadoNuevo == '#string'
     And match response.guardia == null
 
-  @estado-valido @estado-valido-sirviendo
+  @estado-valido @estado-valido-sirviendo @Issue-14
   Scenario: Ejecutar evento válido cuando el robot está sirviendo
     Given url baristaBase + '/estado'
     When method get
@@ -89,7 +89,7 @@ Feature: Yo como tester quiero probar la lógica de estados del robot cafetero a
     And match response.estadoNuevo == '#string'
     And match response.guardia == null
 
-  @estado-valido @estado-valido-error-insumos
+  @estado-valido @estado-valido-error-insumos @Issue-15
   Scenario: Ejecutar evento válido cuando el robot tiene error de insumos
     Given url baristaBase + '/estado'
     When method get
@@ -108,7 +108,7 @@ Feature: Yo como tester quiero probar la lógica de estados del robot cafetero a
     And match response.estadoNuevo == '#string'
     And match response.guardia == null
 
-  @ignore
+  @ignore @Issue-16
   Scenario: Evento inválido cuando la transición no corresponde al estado actual
     Given url baristaBase + '/estado'
     When method get
@@ -123,7 +123,7 @@ Feature: Yo como tester quiero probar la lógica de estados del robot cafetero a
     And match response.valida == false
     And match response.noDefinida == true
 
-  @reiniciar
+  @reiniciar @Issue-17
   Scenario: Reiniciar el estado del robot cafetero
     Given url baristaBase + '/reiniciar'
     When method post
